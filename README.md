@@ -1,6 +1,6 @@
 # BakkesModTransparentTriangle
 
-A utility for BakkesMod that allows transparency for triangles.
+A utility for [BakkesMod](https://bakkesplugins.com/) that allows transparency for triangles.
 
 ## Usage Example
 
@@ -8,11 +8,11 @@ A utility for BakkesMod that allows transparency for triangles.
 void YourPlugin::onLoad()
 {
     // Make sure to distribute the triangle template image with your plugin!
-	triangleImage = std::make_shared<ImageWrapper>(gameWrapper->GetDataFolder() / "your-plugin" / "triangle.png", true, false);
-	transparentTriangle = std::make_shared<TransparentTriangle>(triangleImage);
+    triangleImage = std::make_shared<ImageWrapper>(gameWrapper->GetDataFolder() / "your-plugin" / "triangle.png", true, false);
+    transparentTriangle = std::make_shared<TransparentTriangle>(triangleImage);
 
-	gameWrapper->RegisterDrawable([this](CanvasWrapper canvas)
-		{
+    gameWrapper->RegisterDrawable([this](CanvasWrapper canvas)
+        {
             // Render a lonely triangle...
             canvas.SetColor({ 0, 255, 0, 127 });
             Vector2F p1 = { 700, 700 };
@@ -23,6 +23,7 @@ void YourPlugin::onLoad()
             // More rendering examples. Feel free to delete them.
             //transparentTriangle->Test(canvas);
             //transparentTriangle->TestTouching(canvas);
-		});
+        }
+    );
 }
 ```
