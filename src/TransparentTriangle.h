@@ -4,7 +4,7 @@
 
 class ImageWrapper;
 class CanvasWrapper;
-class Vector2F;
+struct Vector2F;
 
 class TransparentTriangle
 {
