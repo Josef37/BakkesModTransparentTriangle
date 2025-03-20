@@ -25,10 +25,21 @@ using namespace VectorUtils;
 TransparentTriangle::TransparentTriangle(std::shared_ptr<ImageWrapper> triangleImage)
 	: triangleImage(triangleImage)
 {
+	if (triangleImage->IsLoadedForCanvas())
+		imageLoaded = true;
+	else
+		imageLoaded = triangleImage->LoadForCanvas();
 }
 
 void TransparentTriangle::Render(CanvasWrapper canvas, Vector2F p1, Vector2F p2, Vector2F p3)
 {
+	// Render an opaque triangle, if the texture failed to load.
+	if (!imageLoaded)
+	{
+		canvas.FillTriangle(p1, p2, p3);
+		return;
+	}
+
 	// Determine `c` to be opposite of the longest side.
 	float d1 = distance(p2, p3);
 	float d2 = distance(p3, p1);

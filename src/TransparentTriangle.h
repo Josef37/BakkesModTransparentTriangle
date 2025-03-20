@@ -22,6 +22,7 @@ public:
 
 private:
 	std::shared_ptr<ImageWrapper> triangleImage;
+	bool imageLoaded;
 
 	// Points are expected to be ordered counter-clockwise with `c` opposite to the hypotenuse.
 	// To avoid clipping at the canvas edge, the triangle has to be fully inside the canvas before rotation.
