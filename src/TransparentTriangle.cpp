@@ -1,8 +1,10 @@
 #include "pch.h"
 #include "TransparentTriangle.h"
 
-#include <memory>
+#include <cfloat>
 #include <cmath>
+#include <cstdlib>
+#include <memory>
 #include <utility>
 
 #include "bakkesmod/wrappers/wrapperstructs.h"
